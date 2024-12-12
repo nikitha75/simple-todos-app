@@ -64,29 +64,3 @@ const SimpleTodos = () => {
 
 export default SimpleTodos
 
-// const SimpleTodos = () => {
-//   const [todos, setTodos] = useState(initialTodosList)
-
-//   const handleClickDelete = todoId => {
-//     const newTodos = todos.filter(todo => todo.id !== todoId)
-//     setTodos(newTodos)
-//   }
-
-//   return (
-//     <ul>
-//       {todos.map(todo => {
-//         const {id, title} = todo
-//         return (
-//           <li>
-//             {title}
-//             <button type="button" onClick={() => handleClickDelete(id)}>
-//               Delete
-//             </button>
-//           </li>
-//         )
-//       })}
-//     </ul>
-//   )
-// }
-
-// export default SimpleTodos
