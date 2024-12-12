@@ -20,21 +20,27 @@ const TodoItem = ({
     )}
     <div className="btn-group">
       <div>
-        <button
-          type="button"
-          className={`${editedTodo === id ? 'btn save-btn' : 'btn edit-btn'}`}
-          onClick={
-            editedTodo === id
-              ? () => {
-                  handleSaveTodo(id, newTitle)
-                }
-              : () => {
-                  handleEditTodo(id, title)
-                }
-          }
-        >
-          {editedTodo === id ? 'Save' : 'Edit'}
-        </button>
+        {editedTodo === id ? (
+          <button
+            type="button"
+            className="btn save-btn"
+            onClick={() => {
+              handleSaveTodo(id, newTitle)
+            }}
+          >
+            Save
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="btn edit-btn"
+            onClick={() => {
+              handleEditTodo(id, title)
+            }}
+          >
+            Edit
+          </button>
+        )}
       </div>
       <div>
         <button
@@ -50,3 +56,19 @@ const TodoItem = ({
 )
 
 export default TodoItem
+
+// <button
+//           type="button"
+//           className={`${editedTodo === id ? 'btn save-btn' : 'btn edit-btn'}`}
+//           onClick={
+//             editedTodo === id
+//               ? () => {
+//                   handleSaveTodo(id, newTitle)
+//                 }
+//               : () => {
+//                   handleEditTodo(id, title)
+//                 }
+//           }
+//         >
+//           {editedTodo === id ? 'Save' : 'Edit'}
+//         </button>
