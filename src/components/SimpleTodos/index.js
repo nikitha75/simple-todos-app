@@ -54,13 +54,35 @@ const SimpleTodos = () => {
 
   const handleAddTodo = () => {
     if (title !== '' && title !== null) {
-      setTodos(prevState => [
-        ...prevState,
-        {
-          id: Date.now(),
-          title,
-        },
-      ])
+      let numOfTimes = 1
+      let num = ''
+      for (let ch of title) {
+        if (ch >= '0' && ch <= '9') {
+          num = num + ch
+        }
+      }
+
+      if (num != '') {
+        numOfTimes = Number(num)
+      }
+
+      for (let i = 0; i < numOfTimes; i++) {
+        setTodos(prevState => [
+          ...prevState,
+          {
+            id: Date.now() + i,
+            title,
+          },
+        ])
+      }
+      
+      // setTodos(prevState => [
+      //   ...prevState,
+      //   {
+      //     id: Date.now(),
+      //     title,
+      //   },
+      // ])
       setTitle('')
     }
   }
