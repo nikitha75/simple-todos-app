@@ -1,5 +1,3 @@
-// Write your code here
-
 import {useState} from 'react'
 import TodoItem from '../TodoItem'
 
