@@ -1,5 +1,3 @@
-// Write your code here
-
 const TodoItem = ({id, title, handleClickDelete}) => (
   <li>
     <p>{title}</p>
